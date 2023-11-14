@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Card UI</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #ecf0f1;
+        }
+
+        .slider-container {
+            width: 60%;
+            margin: auto;
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 10px solid white;
+            border-radius: 8px;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slider-card {
+            min-width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .nav-btn {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Media Queries */
+        @media only screen and (max-width: 768px) {
+            /* Styles for tablets and smaller screens */
+            .slider-container {
+                width: 90%;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            /* Styles for phones and smaller screens */
+            .slider-container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="slider-container">
+    <div class="slider-wrapper">
+        <div class="slider-card" style="background-color: #e74c3c;">
+            <h2>Card 1</h2>
+            <p>Content for Card 1 goes here.</p>
+        </div>
+        <div class="slider-card" style="background-color: #2ecc71;">
+            <h2>Card 2</h2>
+            <p>Content for Card 2 goes here.</p>
+        </div>
+        <div class="slider-card" style="background-color: #2ecc71;">
+         <h2>Card 3</h2>
+         <p>Content for Card 2 goes here.</p>
+        </div>
+        <!-- Add more slider cards as needed -->
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" onclick="prevSlide()">❮ Prev</button>
+        <button class="nav-btn" onclick="nextSlide()">Next ❯</button>
+    </div>
+</div>
+
+<script>
+    let currentIndex = 0;
+
+    function nextSlide() {
+        const slider = document.querySelector('.slider-wrapper');
+        const cards = document.querySelectorAll('.slider-card');
+        const cardWidth = cards[0].offsetWidth;
+
+        if (currentIndex < cards.length - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+        }
+
+        slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    }
+
+    function prevSlide() {
+        const slider = document.querySelector('.slider-wrapper');
+        const cards = document.querySelectorAll('.slider-card');
+        const cardWidth = cards[0].offsetWidth;
+
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = cards.length - 1;
+        }
+
+        slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    }
+</script>
+
+</body>
+</html>
