@@ -1,188 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        <title>ꋊꄲꉧ꒐ꋊꏂ Exploiting</title>
-        <link rel="shortcut icon" href="/assets/img/logo.png" type="image/x-icon">
-    </head>
-    <body>
-        <!-- OVERLAY -->
-        <div class="overlay first"></div>
-        <div class="overlay second"></div>
-        <div class="overlay third"></div>
-
-        <!-- HEADER -->
-        <header class="l-header">
-            <nav class="nav bd-grid">
-                <div>
-                    <a href="#" class="nav__logo">ꋊꄲꉧ꒐ꋊꏂ</a>
-                </div>
-
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
-                        <li class="nav__item"><a href="/server-not-ready" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="/script/" class="nav__link">Script</a></li>
-                        <li class="nav__item"><a href="/server-not-ready" class="nav__link">Executor</a></li>
-                        <li class="nav__item"><a href="https://discord.com/invite/vybhZNSpDu" class="nav__link">Discord</a></li>
-                    </ul>
-                </div>
-
-                <div class="nav__toggle" id="nav-toggle">
-                    <ion-icon name="menu"></ion-icon>
-                </div>
-            </nav>
-        </header>
-
-        <!-- MAIN -->
-        <main class="l-main bd-grid">
-            <div class="home">
-             <div class="home__information">
-              <span class="home__pressent anime-text">Hello, This is the ꋊꄲꉧ꒐ꋊꏂ website</span>
-              <h1 class="home__title anime-text">ꋊꄲꉧ꒐ꋊꏂ</h1>
-             </div>
-             
-                <style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Not Found</title>
+    <style>
         body {
             font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .slider-container {
-            width: 60%;
-            margin: auto;
-            overflow: hidden;
-            position: absolute;
-            top: 60%;
-            left: 60%;
-            transform: translate(-50%, -50%);
-            border: 2px solid white;
-            border-radius: 8px;
-        }
-
-        .slider-wrapper {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .slider-card {
-            min-width: 100%;
-            box-sizing: border-box;
             text-align: center;
-            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
         }
-
-        .navigation {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
+        .container {
+            margin-top: 100px;
         }
-
-        .nav-btn {
-            background-color: #3498db;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
+        h1 {
+            font-size: 72px;
+            color: #e74c3c;
         }
-
-        /* Media Queries */
-        @media only screen and (max-width: 768px) {
-            /* Styles for tablets and smaller screens */
-            .slider-container {
-                width: 90%;
-            }
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #555;
         }
-
-        @media only screen and (max-width: 480px) {
-            /* Styles for phones and smaller screens */
-            .slider-container {
-                width: 95%;
-            }
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-
-<div class="slider-container">
-    <div class="slider-wrapper">
-        <div class="slider-card" style="background-color: #e74c3c;">
-            <h2>Script 1</h2>
-            <p>THIS IS TESTING SCRIPT PART</p>
-        </div>
-        <div class="slider-card" style="background-color: #2ecc71;">
-            <h2>Script 2</h2>
-            <p>THIS IS TESTING SCRIPT PART</p>
-        </div>
-        <div class="slider-card" style="background-color: blue;">
-         <h2>Script 3</h2>
-         <p>THIS IS TESTING SCRIPT PART</p>
-        </div>
-        <!-- Add more slider cards as needed -->
+    <div class="container">
+        <h1>404</h1>
+        <p>Oops! The page you are looking for might be in another universe.</p>
+        <p>Return <a href="/">home</a> or contact support.</p>
     </div>
-
-    <div class="navigation">
-        <button class="nav-btn" onclick="prevSlide()">❮ Prev</button>
-        <button class="nav-btn" onclick="nextSlide()">Next ❯</button>
-    </div>
-</div>
-
-<script>
-    let currentIndex = 0;
-
-    function nextSlide() {
-        const slider = document.querySelector('.slider-wrapper');
-        const cards = document.querySelectorAll('.slider-card');
-        const cardWidth = cards[0].offsetWidth;
-
-        if (currentIndex < cards.length - 1) {
-            currentIndex++;
-        } else {
-            currentIndex = 0;
-        }
-
-        slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-    }
-
-    function prevSlide() {
-        const slider = document.querySelector('.slider-wrapper');
-        const cards = document.querySelectorAll('.slider-card');
-        const cardWidth = cards[0].offsetWidth;
-
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            currentIndex = cards.length - 1;
-        }
-
-        slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-    }
-</script> 
-                
-                <div class="home__social">
-                    <ion-icon name="logo-youtube" href="https://discord.com/invite/vybhZNSpDu" class="home__social-icon"></ion-icon>
-                    <ion-icon name="logo-github" class="home__social-icon"></ion-icon>
-                    <ion-icon name="logo-twitter" class="home__social-icon"></ion-icon>
-                </div>
-
-            </div>
-        </main>
-
-        <!-- GSAP -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
-
-        <!-- MAIN -->
-        <script src="main.js"></script>
-    
-        <!-- ICONS -->
-        <script  type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
-    </body>
+</body>
 </html>
